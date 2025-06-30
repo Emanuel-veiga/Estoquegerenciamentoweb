@@ -2,66 +2,136 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Cad.produto</title>
+  <title>Cadastro de Produto - EstoqueGerenciamento</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+    }
+
+    header {
+      width: 100%;
+      background-color: #1565c0;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .form-container {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 500px;
+      padding: 30px;
+      margin-top: 30px;
+    }
+
+    .form-container label {
+      margin-top: 10px;
+      display: block;
+      color: #333;
+      font-weight: 600;
+    }
+
+    .form-container input[type="text"],
+    .form-container input[type="number"],
+    .form-container input[type="checkbox"],
+    .form-container select {
+      width: 100%;
+      padding: 12px;
+      margin-top: 6px;
+      margin-bottom: 16px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    .form-container input[type="checkbox"] {
+      width: auto;
+      margin-top: 0;
+    }
+
+    .form-container .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .form-container input[type="submit"] {
+      background-color: #1976d2;
+      color: white;
+      padding: 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+      transition: background 0.3s ease;
+    }
+
+    .form-container input[type="submit"]:hover {
+      background-color: #0d47a1;
+    }
+
+    footer {
+      margin-top: auto;
+      text-align: center;
+      font-size: 14px;
+      color: #555;
+      padding: 20px;
+    }
+  </style>
 </head>
-<style>
-input[type=text], input[type=number], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-input[type=submit] {
-  width: 100%;
-  background-color: #4CAF50;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover{
-  background-color: darkgreen;
-}
-
-div {
-  border-radius: 5px;
-  background-color: #77b2eb;
-  padding: 20px;
-}
-</style>
 <body>
 
-<h3>Using CSS to style an HTML Form</h3>
+  <header>
+    <h1>EstoqueGerenciamento - Cadastro de Produto</h1>
+  </header>
 
-<div>
-  <form action="cadProduto" method="post"  accept-charset="UTF-8">
-    <label>Nome do produto</label>
-    <input type="text" id="fname" name="nome" placeholder="monitor 24'">
+  <div class="form-container">
+    <form action="cadProduto" method="post" accept-charset="UTF-8">
+      <label for="nome">Nome do produto</label>
+      <input type="text" id="nome" name="nome" placeholder="Ex: Monitor 24'" required>
 
-    <label>Fabricante</label>
-    <input type="text" id="lname" name="fabricante" placeholder="LG">
+      <label for="fabricante">Fabricante</label>
+      <input type="text" id="fabricante" name="fabricante" placeholder="Ex: LG">
 
-    <label>Categoria</label>
-    <input type="text" id="lname" name="categoria" placeholder="eletronico">
-    
-    <label> Numero de série</label>
-    <input type="number" id="lname" name="numero_serie" placeholder="1112223334">
-  
-  	 <label for="fragil">É frágil?</label>
-    <input type="checkbox" id="fragil" name="fragile">
-    <br>
-    
-    <input type="submit" value="Cadastrar">
-  </form>
-</div>
+      <label for="categoria">Categoria</label>
+      <input type="text" id="categoria" name="categoria" placeholder="Ex: Eletrônico">
+
+      <label for="numerodeserie">Número de série</label>
+      <input type="number" id="numerodeserie" name="numerodeserie" placeholder="Ex: 123456789" required>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="fragil" name="fragile">
+        <label for="fragil">É frágil?</label>
+      </div>
+
+      <input type="submit" value="Cadastrar Produto">
+    </form>
+  </div>
+
+  <footer>
+    Sistema de Estoque • Projeto acadêmico &copy; 2025
+  </footer>
 
 </body>
 </html>
-
